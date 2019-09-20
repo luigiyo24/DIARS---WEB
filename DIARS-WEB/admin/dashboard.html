@@ -8,9 +8,10 @@
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v3.8.5">
   <title>Dashboard - Machis</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/dashboard/">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
 
 
   <style>
@@ -31,18 +32,16 @@
   </style>
   <!-- Custom styles for this template -->
   <link href="../Assets/CSS/dashboard.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../Assets/CSS/main.css">
 
 </head>
 
 <body>
   <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Restaurante Machis</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard.html">Restaurante Machis</a>
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <a class="nav-link" href="#">Sign out</a>
+        <a class="nav-link" href="#">Salir</a>
       </li>
     </ul>
   </nav>
@@ -54,12 +53,39 @@
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link active" href="#">
-                <img src="../Assets/Images/Icons/user.png" alt="">                
+                <img src="../Assets/Images/Icons/home.png" alt="">                
                 Inicio <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Usuario.html">
+              <a class="nav-link" href="#">
+                  <img src="../Assets/Images/Icons/sales.png" alt="">
+                Ventas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                  <img src="../Assets/Images/Icons/delivery.png" alt="">
+                Delivery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                  <img src="../Assets/Images/Icons/client.png" alt="">
+                Clientes
+              </a>
+            </li>
+          </ul>
+
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Negocio Interno</span>
+            <a class="d-flex align-items-center text-muted" href="#">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+              <a class="nav-link icon" href="Usuario.html">
                 <img src="../Assets/Images/Icons/user.png" alt="">
                 Usuarios
               </a>
@@ -72,53 +98,20 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                  <img src="../Assets/Images/Icons/food.png" alt="">
-                Usuarios
+                  <img src="../Assets/Images/Icons/table.png" alt="">
+                Mesas
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                  <img src="../Assets/Images/Icons/food.png" alt="">
-                Reports
+                  <img src="../Assets/Images/Icons/product.png" alt="">
+                Productos
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                  <img src="../Assets/Images/Icons/food.png" alt="">
-                Integrations
-              </a>
-            </li>
-          </ul>
-
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Saved reports</span>
-            <a class="d-flex align-items-center text-muted" href="#">
-              <span data-feather="plus-circle"></span>
-            </a>
-          </h6>
-          <ul class="nav flex-column mb-2">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Current month
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Last quarter
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Social engagement
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Year-end sale
+                <img src="../Assets/Images/Icons/food-category.png" alt="">
+                Categoria de Platos
               </a>
             </li>
           </ul>
@@ -274,14 +267,16 @@
       </main>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
+    <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.min.js"></script>
   <script>
     window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
-  </script>
-  <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
