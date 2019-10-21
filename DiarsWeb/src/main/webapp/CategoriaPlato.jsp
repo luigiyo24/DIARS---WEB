@@ -68,25 +68,25 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link " href="dashboard.html">
+                <a class="nav-link " href="Dashboard.jsp">
                   <img src="Images/Icons/home.png" alt="">                
                 Inicio <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Ventas.html">
+                <a class="nav-link" href="Ventas.jsp">
                   <img src="Images/Icons/sales.png" alt="">
                 Ventas
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+                <a class="nav-link" href="Delivery.jsp">
                   <img src="Images/Icons/delivery.png" alt="">
                 Delivery
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Clientes.html">
+                <a class="nav-link" href="Clientes.jsp">
                   <img src="Images/Icons/client.png" alt="">
                 Clientes
               </a>
@@ -98,31 +98,31 @@
           </h6>
           <ul class="nav flex-column mb-2">
             <li class="nav-item">
-              <a class="nav-link icon " href="Usuario.html">
+                <a class="nav-link icon " href="Usuario.jsp">
                 <img src="Images/Icons/user.png" alt="">
                 Usuarios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Plato.html">
+                <a class="nav-link" href="Platos.jsp">
                 <img src="Images/Icons/food.png" alt="">
                 Platos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Mesas.html">
+                <a class="nav-link" href="Mesas.jsp">
                   <img src="Images/Icons/table.png" alt="">
                 Mesas
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Productos.html">
+                <a class="nav-link" href="Producto.jsp">
                   <img src="Images/Icons/product.png" alt="">
                 Productos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="CategoriaPlato.html">
+                <a class="nav-link active" href="CategoriaPlato.jsp">
                 <img src="Images/Icons/food-category.png" alt="">
                 Categoria de Platos
               </a>
@@ -152,9 +152,9 @@
                   <div class="col-8 grey lighten-5">
                     <div class="md-form my-5 pb-4">
                       <input type="text" name="inputCategoriaPlato" id="inputCategoriaPlato" class="form-control">
-                      <label for="inputCategoriaPlato">Categoria Plato</label>
+                      <label for="inputCategoriaPlato" id="lblCategoriaPlato">Categoria Plato</label>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block ">Registrar Usuario</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block ">Registrar Categoria Plato</button>
                   </div>
                   <div class="col-4 grey lighten-5 d-flex flex-column justify-content-around">
                     <a href="#" class="btn btn-outline-primary waves-effect">ACTUALIZAR</a>
@@ -223,6 +223,8 @@
     function agregarCategoriaPlato( id){
         console.log(id);
         nom_cat_pla = document.getElementById("nom"+id).innerHTML;
+        lbl_cat_pla = document.getElementById("lblCategoriaPlato");
+        
         console.log(nom_cat_pla);
         document.formCategoriaPlato.inputCategoriaPlato.value = nom_cat_pla;    
 
@@ -232,6 +234,8 @@
         panel2.classList.remove("active");
         panel1.classList.add("active");
         modal.classList.add("active","show");
+        lbl_cat_pla.classList.add("active");
+        
     }
 </script>
 </html>

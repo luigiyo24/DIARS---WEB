@@ -65,25 +65,25 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link " href="dashboard.html">
+                <a class="nav-link " href="Dashboard.jsp">
                 <img src="Images/Icons/home.png" alt="">                
                 Inicio <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Ventas.html">
+                <a class="nav-link" href="Ventas.jsp">
                   <img src="Images/Icons/sales.png" alt="">
                 Ventas
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+                <a class="nav-link" href="Delivery.jsp">
                   <img src="Images/Icons/delivery.png" alt="">
                 Delivery
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Clientes.html">
+                <a class="nav-link" href="Clientes.jsp">
                   <img src="Images/Icons/client.png" alt="">
                 Clientes
               </a>
@@ -95,31 +95,31 @@
           </h6>
           <ul class="nav flex-column mb-2">
             <li class="nav-item">
-              <a class="nav-link icon " href="Usuario.html">
+                <a class="nav-link icon " href="Usuario.jsp">
                 <img src="Images/Icons/user.png" alt="">
                 Usuarios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Plato.html">
+                <a class="nav-link" href="Platos.jsp">
                 <img src="Images/Icons/food.png" alt="">
                 Platos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="Mesas.html">
+                <a class="nav-link active" href="Mesas.jsp">
                   <img src="Images/Icons/table.png" alt="">
                 Mesas
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Productos.html">
+                <a class="nav-link" href="Producto.jsp">
                   <img src="Images/Icons/product.png" alt="">
                 Productos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="CategoriaPlato.html">
+                <a class="nav-link" href="CategoriaPlato.jsp">
                 <img src="Images/Icons/food-category.png" alt="">
                 Categoria de Platos
               </a>
@@ -151,13 +151,19 @@
                       <input type="text" id="form1" class="form-control">
                       <label for="form1">Nombre de Mesa</label>
                     </div>
-                    <div class="md-form">
-                      <input type="text" id="inputMesa" class="form-control">
-                      <label for="inputMesa">Estado de Mesa</label>
+                    <div class="my-3">
+                        <label class="mdb-main-label">Estado</label>
+                        <select class="browser-default custom-select" disabled>
+                            <option value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>
                     </div>
-                    <div class="md-form">
-                      <input type="text" id="inputContraseña" class="form-control">
-                      <label for="inputContraseña">Disponibilidad</label>
+                    <div class="my-3">
+                        <label class="mdb-main-label">Color </label>
+                        <select class="browser-default custom-select" disabled>
+                            <option value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>
                     </div>
                     <button type="button" class="btn btn-primary btn-lg btn-block ">Registrar Mesa</button>
                   </div>

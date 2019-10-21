@@ -3,17 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function agregarCategoriaPlato( id){
-    console.log(id);
-    nom_cat_pla = document.getElementById("nom"+id).innerHTML;
-    console.log(nom_cat_pla);
-    document.formCategoriaPlato.inputCategoriaPlato.value = nom_cat_pla;
+    let panel1 = document.getElementById("modCatPla1");
+    let panel2 = document.getElementById("modCatPla2");
+    let modal = document.getElementById("panel52");
     
-    let panel = document.getElementById("modCatPla");
-    panel.clasList.remove("active");
-    panel.clasList.add("active");
-  
-    
-    //$("nomCatPla").val(nom_cat_pla);
-}
+    function agregarCategoriaPlato( id){
+        console.log(id);
+        nom_cat_pla = document.getElementById("nom"+id).innerHTML;
+        console.log(nom_cat_pla);
+        document.formCategoriaPlato.inputCategoriaPlato.value = nom_cat_pla;    
+
+        panel2.setAttribute("aria-selected","false");
+        panel1.setAttribute("aria-selected","true");
+
+        panel2.classList.remove("active");
+        panel1.classList.add("active");
+        modal.classList.add("active","show");
+    }
 
