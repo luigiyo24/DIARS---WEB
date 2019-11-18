@@ -14,12 +14,13 @@ public class usuario {
     public usuario() {
     }
 
-    public usuario(String idUsuario, String Usuario, String Contraseña, int Estado, String idEmpleado) {
+    public usuario(String idUsuario, String Usuario, String Contraseña, int Estado, String idEmpleado,String cargo) {
         this.idUsuario = idUsuario;
         this.Usuario = Usuario;
         this.Contraseña = Contraseña;
         this.Estado = Estado;
         this.idEmpleado = idEmpleado;
+        this.Cargo = cargo;
     }
     
      
@@ -28,6 +29,7 @@ public class usuario {
     private String Contraseña;
     private int Estado;
     private String idEmpleado;
+    private String Cargo;
 
     public String getIdUsuario() {
         return idUsuario;
@@ -69,9 +71,11 @@ public class usuario {
         this.idEmpleado = idEmpleado;
     }
 
-    
-    
-    
-    
-    
+    public String getCargo() {
+        return Cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.Cargo = cargo;
+    }
 }

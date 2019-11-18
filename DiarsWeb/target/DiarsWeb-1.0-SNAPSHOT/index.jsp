@@ -66,7 +66,7 @@
     
     
     <%
-        HttpSession sesion = request.getSession();
+        /*HttpSession sesion = request.getSession();
         String cargo="";
         if(request.getAttribute("cargo")!=null){
             cargo = (String)request.getAttribute("cargo");
@@ -76,7 +76,7 @@
                 response.sendRedirect("CategoriaPlato.jsp");
             }
         }
-
+*/
     %>
 </body>
 

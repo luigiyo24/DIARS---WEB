@@ -26,16 +26,16 @@ import javax.swing.table.DefaultTableModel;
  * @author mono
  */
 public class daousuarios {
-    private ArrayList<usuario>ven;
+    private List<usuario>ven;
     public daousuarios() {
         
-        ven =(ArrayList)getUsua();
+        ven =getUsua();
     
         
     }
     private List<usuario> getUsua() {
         List<usuario> lista = new ArrayList();
-        String sql = "select * from usuario";
+        String sql = "select u.idusuario,u.usuario,u.contraseña,u.estado,u.sesion,c.cargo from usuario u inner join empleado e on u.idempleado = e.empleado inner join cargo c on e.idcargo= c.idcargo;";
         Connection c = null;
         try {
             c = new Conexion().getMysql();
@@ -43,8 +43,8 @@ public class daousuarios {
             PreparedStatement pst = c.prepareCall(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
-                usuario e = new usuario(rs.getString("idusuario"), rs.getString("usuario"), rs.getString("contraseña"), rs.getInt("estado"), rs.getString("idempleado"));
-                System.out.println(e.getIdUsuario() + " " + e.getUsuario() + " " + e.getContraseña() + " " + e.getEstado() + " " + e.getIdEmpleado());
+                usuario e = new usuario(rs.getString("idusuario"), rs.getString("usuario"), rs.getString("contraseña"), rs.getInt("estado"), rs.getString("idempleado"),rs.getString("cargo"));
+                System.out.println(e.getIdUsuario() + " " + e.getUsuario() + " " + e.getContraseña() + " " + e.getEstado() + " " + e.getIdEmpleado()+" "+e.getCargo());
                 lista.add(e);
             }
             rs.close();
@@ -68,9 +68,9 @@ public class daousuarios {
     public int tamaño(){
         return ven.size();
     }
-    public usuario buscar(String user){
+    public usuario buscar(String user,String pass){
         for(int i=0;i<tamaño();i++){
-            if(ven.get(i).getUsuario().equalsIgnoreCase(user)){
+            if(ven.get(i).getUsuario().equals(user) && ven.get(i).getContraseña().equals(pass)){
                 return ven.get(i);
             }
         }

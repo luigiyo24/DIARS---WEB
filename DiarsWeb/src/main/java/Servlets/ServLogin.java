@@ -5,6 +5,8 @@
  */
 package Servlets;
 
+import clases.empleado;
+import clases.usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.Acceso;
+import dao.daoEmpleado;
+import dao.daousuarios;
 import javax.servlet.RequestDispatcher;
 
 /**
@@ -36,20 +40,21 @@ public class ServLogin extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             String nombre;
             String contra;
-            String cargo = "";
-            Acceso acc = new Acceso();
             RequestDispatcher rd = null;
             
             if(request.getParameter("btnLogin")!=null){
                 nombre=request.getParameter("txtusername");
                 contra=request.getParameter("txtpassword");
-                cargo=acc.validar(nombre, contra);
-                System.out.println(cargo+ "gaaa");
-                
-                request.setAttribute("cargo", cargo);
-                request.setAttribute("nombre", nombre);
-                
-                rd = request.getRequestDispatcher("index.jsp");
+                empleado e= new daoEmpleado().obtener_cargo(nombre, contra);
+                if(e == null){
+                    System.out.println(" contrasena incorrecta");
+                }else{
+                   
+                        request.setAttribute("cargo", e.getCargo());
+                        request.setAttribute("nombre", e.getNombre());
+                        rd = request.getRequestDispatcher("Dashboard.jsp");
+                    
+                }
             }
             rd.forward(request, response);
         }
