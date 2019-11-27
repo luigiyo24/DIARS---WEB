@@ -5,12 +5,16 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="dao.daousuarios"%>
+<%@page import="clases.usuario"%>
 <%@page session="true"%>
 <%
-    String CARGO_ADMINISTRADOR = "Administrador";
-    String CARGO_CAJERO = "Cajero";
-    String CARGO_MOZO = "Mozo";
-    String CARGO_MAITRE = "Maitre";
+    daousuarios usu = new daousuarios();
+    usuario e;
+    e=usu.usuActivo();
+    if(e.getEstado()== 2){
+    response.sendRedirect("Dashboard.jsp");
+    }
 %>
 
 <!DOCTYPE html>
@@ -38,14 +42,14 @@
                     <div class="col-12 user-img">
                         <img src="Images/student.svg" alt="" class="img-login-height">
                     </div>
-                <form action="ServLogin" class="col-12" method="POST">
+                <form action="login" class="col-12" method="post">
                     <div class="form-group" id="user-group">
                         <input type="text" name="txtusername" class="form-control" placeholder="Nombre del Usuario">
                     </div>
                     <div class="form-group" id="password-group">
                         <input type="password" name="txtpassword" class="form-control" placeholder="Contraseña">
                     </div>
-                    <input type="submit" name="btnLogin" class="btn btn-info"><i class="fas fa-sign-in-alt"></i> Ingresar</input>
+                        <input type="submit" name="btnLogin" class="btn btn-info">Ingresar</input>
                 </form>
             </div>
         </div>
@@ -64,20 +68,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.min.js">
     </script>
     
-    
-    <%
-        /*HttpSession sesion = request.getSession();
-        String cargo="";
-        if(request.getAttribute("cargo")!=null){
-            cargo = (String)request.getAttribute("cargo");
-            if(cargo.equals(CARGO_CAJERO)){
-                sesion.setAttribute("nombre", request.getAttribute("nombre"));
-                sesion.setAttribute("cargo", cargo);
-                response.sendRedirect("CategoriaPlato.jsp");
-            }
-        }
-*/
-    %>
 </body>
 
 </html>

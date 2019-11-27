@@ -35,7 +35,7 @@ public class daousuarios {
     }
     private List<usuario> getUsua() {
         List<usuario> lista = new ArrayList();
-        String sql = "select u.idusuario,u.usuario,u.contraseña,u.estado,u.sesion,c.cargo from usuario u inner join empleado e on u.idempleado = e.empleado inner join cargo c on e.idcargo= c.idcargo;";
+        String sql = "select u.idusuario,u.usuario,u.contraseña,u.estado,u.sesion,c.cargo from usuario u inner join empleado e on u.idempleado = e.idempleado inner join cargo c on e.idcargo= c.idcargo";
         Connection c = null;
         try {
             c = new Conexion().getMysql();
@@ -205,4 +205,52 @@ public class daousuarios {
         return numFA;
     }
     
+    
+    
+    public usuario usuActivo() {
+        usuario e = new usuario();
+        String sql = "select * from usuario where estado=?";
+        Connection c = null;
+        try {
+            c = new Conexion().getMysql();;
+            PreparedStatement pst = c.prepareCall(sql);
+            pst.setInt(1, 2);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+//                e = new usuario(rs.getInt("idUsuario"), rs.getString("user"), rs.getString("clave"), rs.getInt("estado"), rs.getInt("empelado_idempelado"));
+                e.setIdUsuario(rs.getString("idUsuario"));
+                e.setUsuario(rs.getString("USUARIO"));
+                e.setContraseña(rs.getString("CONTRASEÑA"));
+                e.setEstado(rs.getInt("estado"));
+                e.setIdEmpleado(rs.getString("IDEMPLEADO"));
+            } else {
+                e = new usuario();
+                e.setEstado(1);
+                return e;
+            }
+
+            rs.close();
+
+            rs = null;
+            c.close();
+            c = null;
+
+            System.out.println("funciono  dsadasdfasdfsdfsdafas");
+            return e;
+        } catch (SQLException ex) {
+            Logger.getLogger(daousuarios.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                c.close();
+                c = null;
+                System.out.println("noooooooooooooo funciono  dsadasdfasdfsdfsdafas");
+                return e = null;
+            } catch (SQLException ex1) {
+                Logger.getLogger(daousuarios.class.getName()).log(Level.SEVERE, null, ex1);
+                System.out.println("asdfdsfsadfasdfsnoooooooooooooo funciono  dsadasdfasdfsdfsdafas");
+                return e = null;
+            }
+        }
+
+    }
+
 }

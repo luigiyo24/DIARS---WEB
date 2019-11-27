@@ -17,11 +17,13 @@ import dao.Acceso;
 import dao.daoEmpleado;
 import dao.daousuarios;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author Luigi
  */
+@WebServlet(name = "ServLogin", urlPatterns = {"/login"})
 public class ServLogin extends HttpServlet {
 
     /**
@@ -40,7 +42,6 @@ public class ServLogin extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             String nombre;
             String contra;
-            RequestDispatcher rd = null;
             
             if(request.getParameter("btnLogin")!=null){
                 nombre=request.getParameter("txtusername");
@@ -52,11 +53,10 @@ public class ServLogin extends HttpServlet {
                    
                         request.setAttribute("cargo", e.getCargo());
                         request.setAttribute("nombre", e.getNombre());
-                        rd = request.getRequestDispatcher("Dashboard.jsp");
+                        request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
                     
                 }
             }
-            rd.forward(request, response);
         }
     }
 
