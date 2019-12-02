@@ -35,7 +35,7 @@ public class daousuarios {
     }
     private List<usuario> getUsua() {
         List<usuario> lista = new ArrayList();
-        String sql = "select u.idusuario,u.usuario,u.contraseña,u.estado,u.sesion,c.cargo from usuario u inner join empleado e on u.idempleado = e.idempleado inner join cargo c on e.idcargo= c.idcargo";
+        String sql = "select u.idusuario,u.usuario,u.contraseña,u.estado,u.sesion,c.cargo,e.idempleado from usuario u inner join empleado e on u.idempleado = e.idempleado inner join cargo c on e.idcargo= c.idcargo";
         Connection c = null;
         try {
             c = new Conexion().getMysql();

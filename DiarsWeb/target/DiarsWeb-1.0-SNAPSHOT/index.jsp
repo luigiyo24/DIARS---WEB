@@ -42,14 +42,14 @@
                     <div class="col-12 user-img">
                         <img src="Images/student.svg" alt="" class="img-login-height">
                     </div>
-                <form action="login" class="col-12" method="post">
+                <form class="col-12" action="login?accion=iniciarU"  method="post">
                     <div class="form-group" id="user-group">
-                        <input type="text" name="txtusername" class="form-control" placeholder="Nombre del Usuario">
+                        <input type="text" name="txtusername" class="form-control" placeholder="Nombre del Usuario"/>
                     </div>
                     <div class="form-group" id="password-group">
-                        <input type="password" name="txtpassword" class="form-control" placeholder="Contraseña">
+                        <input type="password" name="txtpassword" class="form-control" placeholder="Contraseña"/>
                     </div>
-                        <input type="submit" name="btnLogin" class="btn btn-info">Ingresar</input>
+                    <input type="submit" name="btnLogin" class="btn btn-info" value="Ingresar"/>
                 </form>
             </div>
         </div>

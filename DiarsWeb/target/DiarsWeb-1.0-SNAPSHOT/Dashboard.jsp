@@ -45,7 +45,7 @@
 
 <body>
   <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard.html">Restaurante Machis</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard.jsp">Restaurante Machis</a>
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
         <a class="nav-link" href="#">Salir</a>
@@ -59,13 +59,13 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link " href="dashboard.html">
+              <a class="nav-link " href="dashboard.jsp">
                 <img src="Images/Icons/home.png" alt="">                
                 Inicio <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Ventas.html">
+              <a class="nav-link" href="Ventas.jsp">
                   <img src="Images/Icons/sales.png" alt="">
                 Ventas
               </a>
@@ -77,7 +77,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Clientes.html">
+              <a class="nav-link" href="Clientes.jsp">
                   <img src="Images/Icons/client.png" alt="">
                 Clientes
               </a>
@@ -89,31 +89,31 @@
           </h6>
           <ul class="nav flex-column mb-2">
             <li class="nav-item">
-              <a class="nav-link active " href="Usuario.html">
+              <a class="nav-link active " href="Usuario.jsp">
                 <img src="Images/Icons/user.png" alt="">
                 Usuarios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Plato.html">
+              <a class="nav-link" href="Plato.jsp">
                 <img src="Images/Icons/food.png" alt="">
                 Platos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Mesas.html">
+              <a class="nav-link" href="Mesas.jsp">
                   <img src="Images/Icons/table.png" alt="">
                 Mesas
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="Productos.html">
+              <a class="nav-link " href="Productos.jsp">
                   <img src="Images/Icons/product.png" alt="">
                 Productos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="CategoriaPlato.html">
+              <a class="nav-link " href="CategoriaPlato.jsp">
                 <img src="Images/Icons/food-category.png" alt="">
                 Categoria de Platos
               </a>

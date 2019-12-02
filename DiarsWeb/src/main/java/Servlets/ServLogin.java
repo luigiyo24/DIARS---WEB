@@ -23,7 +23,6 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Luigi
  */
-@WebServlet(name = "ServLogin", urlPatterns = {"/login"})
 public class ServLogin extends HttpServlet {
 
     /**
@@ -43,12 +42,16 @@ public class ServLogin extends HttpServlet {
             String nombre;
             String contra;
             
-            if(request.getParameter("btnLogin")!=null){
+            String accion = request.getParameter("accion");
+            System.out.println("   "         +accion );
+            if(accion.equals("iniciarU"));
+            {
                 nombre=request.getParameter("txtusername");
                 contra=request.getParameter("txtpassword");
                 empleado e= new daoEmpleado().obtener_cargo(nombre, contra);
                 if(e == null){
                     System.out.println(" contrasena incorrecta");
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
                 }else{
                    
                         request.setAttribute("cargo", e.getCargo());
@@ -60,40 +63,19 @@ public class ServLogin extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        System.out.println("dddddddd");
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-    }
+                System.out.println("123456");
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    }
     @Override
     public String getServletInfo() {
         return "Short description";
